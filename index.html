@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="main.js"></script>
+        <script defer src="opdracht-1.js"></script>
+        <script defer src="opdracht-2.js"></script>
+        <script defer src="opdracht-3.js"></script>
+        <script defer src="opdracht-4.js"></script>
+    <title>Tech It Easy Dashboard</title>
 </head>
-<body>
-
+    <body class="container">
+        <section>
+            <h3>Opdracht 2b:</h3>
+            <p id="sold-tv"></p>
+        </section>
+        <section>
+            <h3>Opdracht 2d:</h3>
+            <p id="original-stock"></p>
+        </section>
+        <section>
+            <h3>Opdracht 2e:</h3>
+            <p id="stock-to-sell"></p>
+        </section>
+        <section>
+            <h3>Opdracht 3a:</h3>
+            <ul id="list-of-brands-inventory"></ul>
+        </section>
+        <section>
+            <h3>Opdracht 3b:</h3>
+            <ul id="list-of-brands-array"></ul>
+        </section>
+        <section>
+            <h3>Opdracht 4d:</h3>
+            <table id="selected-tv-info"></table>
+        </section>
+        <section>
+            <h3>Opdracht 4e:</h3>
+            <table id="tv-Info"></table>
+        </section>
+        <div>
+            <h3>Bonusopdracht 1:</h3>
+            <input class="button" type="button" value="Uitverkochte exemplaren" onclick="giveSoldOutTv(inventory);">
+            <input class="button" type="button" value="AmbiLight TV's" onclick="giveAmbilight(inventory);">
+            <input class="button" type="button" value="Sorteer op prijs" onclick="sortOnPrice(inventory);">
+        </div>
+<        <section>
+            <h3>Bonusopdracht 2:</h3>
+        </section>
 </body>
 </html>
