@@ -106,18 +106,41 @@ printAllDetails(inventory);
 
 // BONUSOPDRACHT
 
-// Bonusopdracht 1:
+// Bonusopdracht 1 + 2:
 // Maak drie knoppen op de pagina: Sorteer op prijs, AmbiLight TV's en Uitverkochte exemplaren. Gebruik de code die je
 // in opdracht 1b, 1c en 1d hebt gemaakt en schrijf dit om naar functies zodat je ze kunt aanroepen op het moment dat de
 // buttons geklikt worden. Zorg ervoor dat de functies de uitkomsten in de console loggen als de gebruiker op de
 // bijbehorende knop klikt. Tip: lees hiervoor paragraaf 7.4 op EdHub eens door!
 
+function clickButton(Array) {
+    Array.map((tv) => {
+        const buttonEventSoldOut = document.createDocumentFragment();
+
+        const tableRowElementName = document.createElement('tr');
+        tableRowElementName.textContent = generateStringNameOf(tv);
+        buttonEventSoldOut.appendChild(tableRowElementName);
+
+        const tableRowElementPrice = document.createElement('tr');
+        tableRowElementPrice.textContent = generateStringPriceOf(tv);
+        buttonEventSoldOut.appendChild(tableRowElementPrice);
+
+        const tableRowElementSize = document.createElement('tr');
+        tableRowElementSize.textContent = generateStringOfSize(tv);
+        buttonEventSoldOut.appendChild(tableRowElementSize);
+
+        const container = document.getElementById('active-button');
+        container.appendChild(buttonEventSoldOut);
+    });
+}
+
+const buttonSoldOut = document.getElementById('button-sold-out');
+buttonSoldOut.addEventListener('click', giveSoldOutTv);
 // Button sold-out:
-function giveSoldOutTv(Array) {
-    const soldOut = Array.map((inventory) => {
+function giveSoldOutTv() {
+    const soldOut = inventory.filter((inventory) => {
         return inventory.sold === inventory.originalStock;
     });
-    console.log(soldOut)
+    clickButton(soldOut);
 }
 
 // Button hasAmbilight:
@@ -133,14 +156,6 @@ function sortOnPrice(Array) {
     Array.sort((a, b) => a.price - b.price);
     console.log(Array);
 }
-
-//----------------------------------------------------------------------------------------------------------------------
-
-// Bonusopdracht 2:
-// Zorg er nu voor, in plaats van dat de uitkomsten in de console worden gelogd, dat de uitkomsten worden meegegeven aan
-// jouw functie uit 4e zodat de resultaten daadwerkelijk op de pagina weergegeven worden!
-
-
 
 
 
