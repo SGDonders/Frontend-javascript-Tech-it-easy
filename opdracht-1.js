@@ -15,13 +15,7 @@ console.log(tvType);
 // Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn.
 // Log de uitkomst in de console.
 
-const outOfStock = inventory.filter((inventory ) => {
-    const originalStock = inventory.originalStock
-    let soldOut = inventory.sold;
-    if (originalStock === soldOut){
-        return inventory;
-    }
-});
+const outOfStock = inventory.filter(inventory => originalStock === soldOut);
 console.log(outOfStock);
 
 //----------------------------------------------------------------------------------------------------------------------
